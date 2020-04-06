@@ -1,9 +1,28 @@
 /********************
  * HELPER FUNCTIONS *
  ********************/
+const makeDino = function (speciesName, period, diet, notExtinct = false) {
+  const dino = {
+    species: speciesName,
+    period: period,
+    carnivore: diet,
+    extinct: notExtinct,
+  }
+  return dino;
+}
 
-
-
+const makeSingular = function (dino) {
+  if (dino[species][dino.species-2] === 'u' && dino[species][dino.species-1] === 's') {
+    dino.species.slice(0, dino.species[dino.species-2])
+  }
+  return dino;
+}
+makeSingular([{
+  species: 'Brachiosaurus',
+  period: 'Jurassic',
+  carnivore: false,
+  extinct: true
+}])
 /***********************
  * ITERATION FUNCTIONS *
  **********************/

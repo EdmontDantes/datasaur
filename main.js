@@ -12,17 +12,20 @@ const makeDino = function (speciesName, period, diet, notExtinct = false) {
 }
 
 const makeSingular = function (dino) {
-  if (dino[species][dino.species-2] === 'u' && dino[species][dino.species-1] === 's') {
-    dino.species.slice(0, dino.species[dino.species-2])
+  if (dino.species.endsWith('us')) {
+    dino.species.slice(0, -2)
   }
   return dino;
 }
-makeSingular([{
+
+makeSingular({
   species: 'Brachiosaurus',
   period: 'Jurassic',
   carnivore: false,
   extinct: true
-}])
+})
+
+
 /***********************
  * ITERATION FUNCTIONS *
  **********************/

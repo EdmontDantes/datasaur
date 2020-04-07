@@ -182,7 +182,7 @@ const extinctOnly = function (dinos) {
   return dinos.filter(isExtinct);
 }
 
-//helper function  for herbivoresOnly
+//helper function  for notExtinct
 const isNotExtinct = function (dino) {
   const copyOfDino = makeDino(dino.species, dino.period, dino.carnivore, dino.extinct);
   if (copyOfDino.extinct === false)
